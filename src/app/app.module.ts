@@ -47,6 +47,8 @@ import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-
 import { MapComponent } from './components/map/map.component';
 import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
 import { PilRegComponent } from './view/pilot/pil-reg/pil-reg.component';
+import { PilToDoComponent } from './view/pilot/pil-to-do/pil-to-do.component';
+import { PilTodoDetailComponent } from './view/pilot/pil-todo-detail/pil-todo-detail.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
 
 const appRoutes: Routes = [
@@ -81,6 +83,8 @@ const appRoutes: Routes = [
   { path: 'my_drones',component:   MyDronesComponent},
   { path: 'map',component: MapComponent},
   { path: 'pil_reg',component: PilRegComponent },
+  { path: 'pil_todo',component: PilToDoComponent },
+  { path: 'pil_todo-detail',component:  PilTodoDetailComponent }
 
 ]
 
@@ -123,6 +127,8 @@ const appRoutes: Routes = [
     SidebarCustomerComponent,
     MapComponent,
     PilRegComponent,
+    PilToDoComponent,
+    PilTodoDetailComponent,
     AppHeaderComponent
  
   ],

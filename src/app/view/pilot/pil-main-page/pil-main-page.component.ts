@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService} from "../../../services/user.service";
+import { RequestService} from "../../../services/request.service";
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pil-main-page',
@@ -9,20 +10,30 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./pil-main-page.component.css']
 })
 export class PilMainPageComponent implements OnInit {
-  user_id:number
-  pil_data = []
+ 
 
   constructor(
-    router: ActivatedRoute,
-    private UserService : UserService
+    public router : Router,
+    private RequestService : RequestService
   ) {
-    router.params.subscribe(user_id=>this.user_id)
+    
    }
 
+  
+  pending_req_arr = [];
+ 
+
   ngOnInit() {
-    console.log("on init  function called")
-    this.UserService.getPilot_byID(this.user_id).subscribe(res=>this.pil_data=res)
-    console.log(this.pil_data)
+    this.RequestService.getAll_Requests().subscribe(
+    (res) => {
+      console.log(res);
+      this.pending_req_arr=res;
+      //this.router.navigateByUrl('/login');
+    })
+    // (res=>this.pending_req_arr=res)
+    // console.log("printing all")
+    // console.log(this.pending_req_arr)
   }
+  
 
 }

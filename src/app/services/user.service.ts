@@ -7,6 +7,11 @@ export class UserService {
 
   constructor(private http:Http) { }
 
+  POST_user_log(user_data){
+    console.log("POST_user_log called")
+    return this.http.post("/api/user/user/login",user_data)
+  };
+
   getAll_Customers(){
     console.log("getAll_Customers called")
     return this.http.get("/api/user/cus").map((res: Response)=> res.json())
