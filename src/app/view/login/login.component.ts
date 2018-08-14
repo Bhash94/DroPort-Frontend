@@ -59,11 +59,12 @@ export class LoginComponent implements OnInit {
     var user_data = login.value
 
     console.log(user_data)
-    var user_data = login.value
+    
     this.UserService.POST_user_log(user_data).subscribe(
       (res) => {
-        console.log(res);
-        this.router.navigateByUrl('/pil_main_page');
+        //console.log(res);
+        
+        //this.router.navigateByUrl('/pil_main_page');
       });
 
   }
